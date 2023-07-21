@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+section,
+header {
+  background: linear-gradient(0deg, #cfd8d8, #cfd8d8), #cfd8d8;
+  background-blend-mode: multiply, normal;
+  /*  padding: 120px; */
+}
+
+footer {
+  background: linear-gradient(
+      0deg,
+      rgba(17, 32, 38, 0.24),
+      rgba(17, 32, 38, 0.24)
+    ),
+    linear-gradient(0deg, #cfd8d8, #cfd8d8), #cfd8d8;
+}
+@media (min-width: 1280px) {
+  .topic-container:hover .sub-topic {
+    display: flex;
+  }
+}
+
+.slide img {
+  max-width: initial;
+}
+#carousel {
+  display: flex;
+  height: 500px;
+}
+
+/* All .slide 10%... */
+.slide {
+  flex-basis: 12%;
+  flex-grow: 1;
+  transition: flex-basis 0.3s;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.slide-item {
+  flex-basis: 12%;
+  flex-grow: 1;
+  transition: flex-basis 0.3s;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+/* ...except first .slide 50% */
+.slide:first-child {
+  flex-basis: 45%;
+}
+.slide-item-active {
+  flex-basis: 45% !important;
+}
+
+/* When #carousel is hovered, all .slide 10%... */
+#carousel:hover .slide {
+  flex-basis: 12%;
+}
+#carousel:hover .slide-item {
+  flex-basis: 12%;
+}
+
+/* ...except hovered .slide 50% */
+#carousel:hover .slide:hover {
+  flex-basis: 45%;
+}
+#carousel:hover .slide-item:hover {
+  flex-basis: 45%;
+}
+
+.slide image {
+  width: auto;
+  height: 100%;
+}
+.slide-item img {
+  max-width: inherit;
+  height: 100%;
+}
+@media (max-width: 700px) {
+  .car {
+    padding: 1rem 0px;
+  }
+  .slide,
+  .slide-item {
+    border-radius: 0;
+  }
+  .slide img,
+  .slide-item img {
+    width: 100%;
+  }
+
+  #carousel {
+    display: block;
+    height: initial !important;
+  }
+}
